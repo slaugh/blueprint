@@ -31,7 +31,7 @@ def visualize(request, device_id):
     context = {
         "device_state": device_state
     }
-    return render(request, 'example/index.html', context=context)
+    return render(request, 'bproject/index.html', context=context)
     # return HttpResponse("Hello, world. Welcome to the Visualize endpoint! {}".format(str(device_state.memory)))
 
 

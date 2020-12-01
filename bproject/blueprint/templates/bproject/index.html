@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Backbone Demo</title>
+</head>
+<body>
+    {% load static %}
+    <img src="{% static 'bproject/images/Device.png' %}" alt="IoT Device">
+    <p>Smoodie Machine CPU:{{ device_state.cpu }}</p>
+    <p>Smoodie Machine MEM:{{ device_state.memory }}</p>
+
+</body>
+</html>
+
+<!-- NOTE: This will refresh the page every 0.5 seconds and is very hacky - Remove this for any real solution -->
+<meta http-equiv="refresh" content="0.5" />

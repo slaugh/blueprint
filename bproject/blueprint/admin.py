@@ -18,6 +18,13 @@ class ContactAdmin(admin.ModelAdmin):
     """
     # Example list_display shows the fields that will render on the top level Contacts page
     list_display = ("last_name", "first_name", "phone_number", "email_address", "date_added")
+
+    # Example of how to separate fields into fieldsets with header information for each fieldset
+    fieldsets = [
+        ('Contact Information', {'fields': ['first_name', "last_name", "phone_number", "email_address"]}),
+        ('Date Information', {'fields': ['date_added']}),
+    ]
+
     # Example of creating a search bar
     search_fields = ("last_name__startswith",)
 
@@ -68,6 +75,9 @@ class DeviceAdmin(admin.ModelAdmin):
     """
     list_display = ("serial_number", "model", "software", "register_date", "location_link")
     list_filter = ("model",)
+
+    # Example fields element shows the fields in this order when you select a customer account
+    fields = ["model", "software", "serial_number", "register_date"]
 
     # Example of creating a custom link to a foreign key as part of the list_display fields in the admin page.
     def location_link(self, obj):
